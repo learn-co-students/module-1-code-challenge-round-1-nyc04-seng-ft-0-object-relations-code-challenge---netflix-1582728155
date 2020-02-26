@@ -11,6 +11,20 @@ end
 # so they will be available to test and play around with in your console
 
 
+daryl = Viewer.new("Daryl")
+graham = Viewer.new("Graham")
+anne = Viewer.new("Anne")
+
+bad_boys = Movie.new("Bad Boys")
+step_brothers = Movie.new("Step Brothers")
+good_will_hunting = Movie.new ("Good Will Hunting")
+
+review1 = Review.new(daryl, step_brothers, 5)
+review2 = Review.new(graham, bad_boys, 4)
+review3 = Review.new(daryl, bad_boys, 3)
+review4 = Review.new(anne, good_will_hunting, 5)
+review5 = Review.new(anne, step_brothers, 3)
+
 
 
 
