@@ -1,15 +1,32 @@
 class Viewer
   attr_accessor :username
 
-  @@all = []
+  All = []
 
   def initialize(username)
     @username = username
-    self.class.all << self
+    All << self 
   end
 
   def self.all
-    @@all
+    All
   end
+
+  def reviews 
+    Review.all.select do |review|
+      #binding.pry
+      review.viewer == self
+    end 
+  end 
+
+  def reviewed_movies 
+    reviews.map do |review|
+      review.movie
+    end 
+  end 
+
+  def rate_movie(movie, rating)
+    Review.new(self, movie, rating)
+  end 
   
 end
